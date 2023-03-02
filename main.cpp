@@ -3,7 +3,14 @@
 //
 
 #include <iostream>
+#include "SudokuFactory.h"
+#include "SudokuSolver.h"
 
 int main() {
-    std::cout << "Hello world";
+    int grid[9][9];
+    SudokuFactory::get_sudoku(grid);
+    SudokuSolver::print_sudoku(grid);
+    std::cout << SudokuSolver::solve(grid);
+    std::cout << '\n';
+    SudokuSolver::print_sudoku(grid);
 }
