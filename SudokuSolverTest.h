@@ -22,6 +22,7 @@ public:
 class SudokuSolverTest {
 public:
     static bool compare(const int grid[9][9]);
+    static std::string build_failed_test_message(const int& row, const int& col);
 };
 
 

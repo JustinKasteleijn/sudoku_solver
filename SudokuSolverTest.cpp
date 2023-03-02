@@ -21,9 +21,13 @@ bool SudokuSolverTest::compare(const int grid[9][9]) {
     for (int i = 0; i < 9; i++) {
         for (int j = 0; j < 9; j++) {
             if (grid[i][j] != result[i][j]) {
-                throw SudokuSolveFailedException(std::string("MISTAKE MADE AT ROW: " + std::to_string(++i) + " COL: " + std::to_string(++j) + '\n'));
+                throw SudokuSolveFailedException(build_failed_test_message(i, j));
             }
         }
     }
     return true;
+}
+
+std::string SudokuSolverTest::build_failed_test_message(const int& row, const int& col) {
+    return std::string("TEST FAILED \n AT ROW: " + std::to_string(row + 1) + " COL: " + std::to_string(col + 1) + '\n');
 }

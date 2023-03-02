@@ -33,7 +33,7 @@ bool SudokuSolver::solve(int grid[9][9]) {
 }
 
 bool SudokuSolver::find_empty_cell(const int grid[9][9], int &row, int &col) {
-    for (int r = 0; r < 3; r++) {
+    for (int r = 0; r < 9; r++) {
         for (int c = 0; c < 9; c++) {
             if (grid[r][c] == 0) {
                 row = r;
