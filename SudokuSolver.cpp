@@ -12,6 +12,7 @@ void SudokuSolver::print_sudoku(const int grid[9][9]) {
             std::cout << grid[r][c];
         }
     }
+    std::cout << '\n';
 }
 
 bool SudokuSolver::solve(int grid[9][9]) {
@@ -32,7 +33,7 @@ bool SudokuSolver::solve(int grid[9][9]) {
 }
 
 bool SudokuSolver::find_empty_cell(const int grid[9][9], int &row, int &col) {
-    for (int r = 0; r < 9; r++) {
+    for (int r = 0; r < 3; r++) {
         for (int c = 0; c < 9; c++) {
             if (grid[r][c] == 0) {
                 row = r;
@@ -49,7 +50,8 @@ bool SudokuSolver::no_conflict(const int grid[9][9], const int &row, const int &
 }
 
 bool SudokuSolver::col_check(const int grid[9][9], const int &col, const int &num) {
-    for (int i = 1; i < 9; i++) {
+    for (int i = 0; i < 9; i++) {
+        //std::cout << std::to_string(grid[i][col]) + '\n';
         if (num == grid[i][col])
             return false;
     }
@@ -57,7 +59,7 @@ bool SudokuSolver::col_check(const int grid[9][9], const int &col, const int &nu
 }
 
 bool SudokuSolver::row_check(const int grid[9][9], const int &row, const int &num) {
-    for (int i = 1; i < 9; i++) {
+    for (int i = 0; i < 9; i++) {
         if (num == grid[row][i])
             return false;
     }

@@ -5,6 +5,7 @@
 #include <iostream>
 #include "SudokuFactory.h"
 #include "SudokuSolver.h"
+#include "SudokuSolverTest.h"
 
 int main() {
     int grid[9][9];
@@ -13,4 +14,5 @@ int main() {
     std::cout << SudokuSolver::solve(grid);
     std::cout << '\n';
     SudokuSolver::print_sudoku(grid);
+    SudokuSolverTest::compare(grid);
 }
